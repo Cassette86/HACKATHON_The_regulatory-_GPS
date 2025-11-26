@@ -1,0 +1,11 @@
+card_style = """
+<style>
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+</style>
+"""
