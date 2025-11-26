@@ -277,12 +277,22 @@ def parse_ais_table(soup: BeautifulSoup):
 # ---------------------------------------------------------------------------
 
 FRANCE_URLS = [
-    # Code de la route (texte complet, toutes les règles de circulation + beaucoup de technique)
-    "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006074228/",
-
-    # Page officielle “Homologation des véhicules” (type-approval FR, renvoie vers les arrêtés de réception)
+    # Homologation / réception des véhicules (déjà OK)
     "https://www.ecologie.gouv.fr/politiques-publiques/homologation-vehicules",
+
+    # Politique véhicules électriques (grande page de synthèse VE)
+    "https://www.ecologie.gouv.fr/politiques-publiques/developper-vehicules-electriques",
+
+    # Infrastructures de recharge (très utile pour l’écosystème VE)
+    "https://www.ecologie.gouv.fr/politiques-publiques/developpement-nouveaux-equipements-reseaux-recharges-vehicules-electriques",
+
+    # Rétrofit électrique (conversion thermique -> électrique)
+    "https://www.ecologie.gouv.fr/politiques-publiques/savoir-retrofit-electrique",
+
+    # Dossier : financer son passage à l’électrique
+    "https://www.ecologie.gouv.fr/dossiers/savoir-passer-lelectrique/financer-son-passage-lelectrique",
 ]
+
 
 
 
@@ -341,17 +351,17 @@ def scrape_india_ais():
 # ---------------------------------------------------------------------------
 
 UK_URLS = [
-    # Loi cadre (inclut construction & use, permis, infractions...)
-    "https://www.legislation.gov.uk/ukpga/1988/52/contents",  # Road Traffic Act 1988
+    # Vue d'ensemble de la procédure d'approval (import, véhicule construit, modifié, etc.)
+    "https://www.gov.uk/vehicle-approval/overview",
 
-    # Construction and Use Regulations (structure et équipements des véhicules)
-    "https://www.legislation.gov.uk/uksi/1986/1078/contents/made",
+    # Page centrale VCA sur la type-approval (GB, UK(NI), UNECE...)
+    "https://www.vehicle-certification-agency.gov.uk/vehicle-type-approval/",
 
-    # Lighting Regulations (éclairage véhicules)
-    "https://www.legislation.gov.uk/uksi/1989/1796/contents/made",
+    # Explications détaillées : "What is Vehicle Type Approval?"
+    "https://www.vehicle-certification-agency.gov.uk/vehicle-type-approval/what-is-vehicle-type-approval/",
 
-    # Type-approval UK après Brexit
-    "https://www.legislation.gov.uk/uksi/2020/818/contents/made",  # Road Vehicles (Approval) Regulations 2020
+    # Provisional GB Type Approval scheme (post-Brexit, très intéressant pour ton use case)
+    "https://www.vehicle-certification-agency.gov.uk/vehicle-type-approval/provisional-gb-type-approval-scheme/",
 ]
 
 
@@ -367,7 +377,6 @@ def scrape_uk():
 # 5. 🇨🇳 & 🇯🇵 – URLs à compléter (scrape simple)
 # ---------------------------------------------------------------------------
 
-CHINA_URLS = [
 CHINA_URLS = [
     # Index général des standards "Emission Standard for Mobile-source Pollutants"
     "https://english.mee.gov.cn/Resources/standards/Air_Environment/emission_mobile/",
@@ -385,7 +394,6 @@ CHINA_URLS = [
     "https://english.mee.gov.cn/Resources/standards/Noise/Method_standard3/200907/t20090716_156194.shtml",
 ]
 
-]
 
 JAPAN_URLS = [
     # Page générale sur l'inspection des véhicules (contexte réglementation)
