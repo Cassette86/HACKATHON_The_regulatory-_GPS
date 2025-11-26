@@ -142,6 +142,18 @@ EU_URLS = [
     # Règlement (UE) 2019/2144 - General Safety Regulation (ADAS, etc.)
     "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2144",
     # Tu peux ajouter ici d'autres textes importants si tu veux
+    # Type-approval / surveillance du marché véhicules légers (remplace 2007/46/CE)
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0858",
+
+    # Sécurité générale & protection usagers vulnérables
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2144",
+
+    # Émissions Euro 5 / Euro 6 véhicules légers
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32007R0715",
+
+    # Émissions Euro VI véhicules lourds
+    "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009R0595",
+
 ]
 
 
@@ -157,6 +169,14 @@ def scrape_eu():
 
 USA_INDEX_URL = "https://ecfr.io/Title-49/Part-571"
 USA_SECTION_PREFIX = "/Title-49/Section-571."
+
+
+USA_URLS = [
+    "https://ecfr.io/Title-49/Part-565",  # VIN
+    "https://ecfr.io/Title-49/Part-566",  # Manufacturer identification
+    "https://ecfr.io/Title-49/Part-567",  # Certification
+    "https://ecfr.io/Title-49/Part-568",  # Vehicles built in two or more stages
+]
 
 
 def scrape_usa_fmvss():
@@ -257,12 +277,13 @@ def parse_ais_table(soup: BeautifulSoup):
 # ---------------------------------------------------------------------------
 
 FRANCE_URLS = [
-    # Code de la route (version consolidée)
+    # Code de la route (texte complet, toutes les règles de circulation + beaucoup de technique)
     "https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006074228/",
-    # Tu peux rajouter d'autres actes ici si besoin, par ex. :
-    # - Arrêtés sur l'éclairage, le contrôle technique, etc.
-    # "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000571356",  # exemple
+
+    # Page officielle “Homologation des véhicules” (type-approval FR, renvoie vers les arrêtés de réception)
+    "https://www.ecologie.gouv.fr/politiques-publiques/homologation-vehicules",
 ]
+
 
 
 def scrape_france():
@@ -271,7 +292,13 @@ def scrape_france():
         scrape_text_page("France", url)
 
 
+INDIA_URLS = [
+    # Page ministère qui liste Motor Vehicles Act + CMVR
+    "https://parivahan.gov.in/parivahan/en/content/act-rules-and-policies",
 
+    # Fiche officielle CMVR 1989 (MORTH)
+    "https://morth.nic.in/en/central-motor-vehicles-rules-1989",
+]
 
 def scrape_india_ais():
     """
@@ -310,18 +337,23 @@ def scrape_india_ais():
 
 
 # ---------------------------------------------------------------------------
-# 🇬🇧 UK – quelques textes clés sur legislation.gov.uk
+# 🇬🇧 UK – quelques textes clés sur legislation.gov.uk_
 # ---------------------------------------------------------------------------
 
 UK_URLS = [
-    # The Road Traffic Act 1988 (cadre général)
-    "https://www.legislation.gov.uk/ukpga/1988/52/contents",
-    # The Road Vehicles (Construction and Use) Regulations 1986
+    # Loi cadre (inclut construction & use, permis, infractions...)
+    "https://www.legislation.gov.uk/ukpga/1988/52/contents",  # Road Traffic Act 1988
+
+    # Construction and Use Regulations (structure et équipements des véhicules)
     "https://www.legislation.gov.uk/uksi/1986/1078/contents/made",
-    # The Road Vehicles Lighting Regulations 1989
+
+    # Lighting Regulations (éclairage véhicules)
     "https://www.legislation.gov.uk/uksi/1989/1796/contents/made",
-    # Tu peux ajouter d'autres textes si besoin (MOT, type approval, etc.)
+
+    # Type-approval UK après Brexit
+    "https://www.legislation.gov.uk/uksi/2020/818/contents/made",  # Road Vehicles (Approval) Regulations 2020
 ]
+
 
 
 def scrape_uk():
@@ -336,10 +368,23 @@ def scrape_uk():
 # ---------------------------------------------------------------------------
 
 CHINA_URLS = [
-    # TODO: ajoute ici des URLs officielles des ministères chinois
-    # (ex: Ministère de l'Écologie et de l'Environnement pour bruit / émissions)
-    # Exemple (à adapter/compléter) :
-    # "https://www.mee.gov.cn/xxxx/xxxx.html",
+CHINA_URLS = [
+    # Index général des standards "Emission Standard for Mobile-source Pollutants"
+    "https://english.mee.gov.cn/Resources/standards/Air_Environment/emission_mobile/",
+
+    # Emissions light-duty vehicles (GB 18352.3-2005 – Euro III/IV like)
+    "https://english.mee.gov.cn/Resources/standards/Air_Environment/emission_mobile/200710/t20071024_111848.shtml",
+
+    # China V – Limits and methods for emissions from light-duty vehicles (GB 18352.5-2013)
+    "https://english.mee.gov.cn/Resources/standards/Air_Environment/emission_mobile/201605/t20160511_337517.shtml",
+
+    # Hybrid light-duty vehicles (GB 19755-2016)
+    "https://english.mee.gov.cn/Resources/standards/Air_Environment/emission_mobile/201609/t20160902_363506.shtml",
+
+    # Bruit – tri-wheel & low-speed vehicle (référence à GB 7258)
+    "https://english.mee.gov.cn/Resources/standards/Noise/Method_standard3/200907/t20090716_156194.shtml",
+]
+
 ]
 
 JAPAN_URLS = [
