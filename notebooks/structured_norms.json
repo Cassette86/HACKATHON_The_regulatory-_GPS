@@ -1,0 +1,89 @@
+{
+"pays": "ONU",
+"nom_norme": "Règlement ONU n°141",
+"date_publication": "30 January 2017",
+"loi_id": "ECE/TRANS/WP.29/2016/63",
+"pieces_concernees": ["Systèmes de surveillance de pression des pneumatiques (TPMS)", "Véhicules M1 ≤ 3 500 kg", "Véhicules N1"],
+"exigences": [
+{
+"description": "Le TPMS doit fonctionner de 40 km/h jusqu’à la vitesse maximale du véhicule.",
+"obligation": "obligatoire",
+"tests_requis": ["Test de fonctionnement en plage de vitesse"],
+"chiffres_cles": ["≥ 40 km/h"],
+"article_source": "5.1.3",
+"degre_importance": "high"
+},
+{
+"description": "Le TPMS ne doit pas être affecté par des champs magnétiques ou électriques et doit satisfaire aux exigences du Règlement n°10.",
+"obligation": "obligatoire",
+"tests_requis": ["Conformité CEM (Reg. 10)"],
+"chiffres_cles": ["Séries 03 ou 04 selon type de véhicule"],
+"article_source": "5.1.2",
+"degre_importance": "high"
+},
+{
+"description": "Le TPMS doit détecter une perte de pression incidente de 20 % ou atteindre 150 kPa (la valeur la plus élevée) et activer le signal d’alerte en moins de 10 minutes.",
+"obligation": "obligatoire",
+"tests_requis": ["Test de crevaison (puncture test)"],
+"chiffres_cles": ["20 %", "150 kPa", "≤ 10 minutes"],
+"article_source": "5.2.1",
+"degre_importance": "high"
+},
+{
+"description": "Le TPMS doit détecter une pression insuffisante significative de 20 % ou 150 kPa et activer l’alerte en moins de 60 minutes.",
+"obligation": "obligatoire",
+"tests_requis": ["Test de diffusion (diffusion test)"],
+"chiffres_cles": ["20 %", "150 kPa", "≤ 60 minutes"],
+"article_source": "5.3.1",
+"degre_importance": "high"
+},
+{
+"description": "Le système doit détecter un dysfonctionnement affectant la génération ou transmission des signaux et activer une alerte en moins de 10 minutes.",
+"obligation": "obligatoire",
+"tests_requis": ["Test de défaillance (malfunction test)"],
+"chiffres_cles": ["≤ 10 minutes"],
+"article_source": "5.4.1",
+"degre_importance": "high"
+},
+{
+"description": "Le signal d’avertissement doit être un signal optique conforme au Règlement n°121, visible de jour et vérifiable facilement.",
+"obligation": "obligatoire",
+"tests_requis": [],
+"chiffres_cles": [],
+"article_source": "5.5.1-5.5.3",
+"degre_importance": "medium"
+},
+{
+"description": "En cas de dysfonctionnement, le témoin doit clignoter puis rester allumé tant que la défaillance n'est pas corrigée.",
+"obligation": "obligatoire",
+"tests_requis": [],
+"chiffres_cles": [],
+"article_source": "5.5.4",
+"degre_importance": "medium"
+},
+{
+"description": "L’outil de réinitialisation du TPMS peut utiliser un mode de clignotement pour indiquer l’état du reset.",
+"obligation": "recommandé",
+"tests_requis": [],
+"chiffres_cles": [],
+"article_source": "5.5.5",
+"degre_importance": "low"
+},
+{
+"description": "Le manuel utilisateur doit inclure une information complète sur le TPMS : présence, symboles d’alerte, instructions de reset, actions correctives.",
+"obligation": "obligatoire",
+"tests_requis": [],
+"chiffres_cles": [],
+"article_source": "6.1",
+"degre_importance": "medium"
+},
+{
+"description": "Les essais TPMS doivent être réalisés dans des conditions spécifiques de température, route sèche, absence d'interférences radio, et pression mesurée avec précision ±3 kPa.",
+"obligation": "obligatoire",
+"tests_requis": ["Puncture test", "Diffusion test", "Malfunction test"],
+"chiffres_cles": ["0–40°C", "±3 kPa"],
+"article_source": "Annex 3",
+"degre_importance": "high"
+}
+]
+}
